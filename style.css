@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #2563eb;
+    --azul-escuro: #1d4ed8;
+    --azul-claro: #eff6ff;
+
+    --verde: #16a34a;
+    --verde-claro: #dcfce7;
+
+    --vermelho: #dc2626;
+    --vermelho-claro: #fee2e2;
+
+    --cinza-900: #0f172a;
+    --cinza-700: #334155;
+    --cinza-500: #64748b;
+    --cinza-300: #cbd5e1;
+    --cinza-100: #f1f5f9;
+
+    --branco: #ffffff;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #3b82f6 0,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #172554
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+}
+
+.caixa {
+    background: var(--branco);
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    animation: aparecer 0.5s ease;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul-claro);
+
+    font-size: 28px;
+}
+
+.cabecalho h1 {
+    color: var(--cinza-900);
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.cabecalho p {
+    color: var(--cinza-500);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+/* SALDO */
+
+.saldo-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #dbeafe
+        );
+
+    border: 1px solid #bfdbfe;
+
+    margin-bottom: 30px;
+}
+
+.saldo-label {
+    display: block;
+
+    color: var(--cinza-500);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+.saldo-card strong {
+    color: var(--azul-escuro);
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.saldo-icon {
+    font-size: 32px;
+}
+
+/* FORMULÁRIO */
+
+.formulario label {
+    display: block;
+
+    color: var(--cinza-700);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+
+    height: 65px;
+
+    border: 2px solid var(--cinza-300);
+
+    border-radius: 14px;
+
+    padding: 0 18px;
+
+    transition: 0.2s;
+
+    background: white;
+}
+
+.input-container:focus-within {
+    border-color: var(--azul);
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.input-container span {
+    color: var(--cinza-500);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    margin-right: 8px;
+}
+
+.input-container input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: var(--cinza-900);
+
+    background: transparent;
+}
+
+/* Remove setas do input number */
+
+.input-container input::-webkit-inner-spin-button,
+.input-container input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input-container input {
+    appearance: textfield;
+}
+
+/* BOTÃO */
+
+button {
+    width: 100%;
+
+    height: 58px;
+
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--azul-escuro)
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* MENSAGENS */
+
+.mensagem {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.mensagem.sucesso {
+    display: block;
+
+    color: #166534;
+
+    background: var(--verde-claro);
+
+    border: 1px solid #bbf7d0;
+}
+
+.mensagem.erro {
+    display: block;
+
+    color: #991b1b;
+
+    background: var(--vermelho-claro);
+
+    border: 1px solid #fecaca;
+}
+
+/* RESULTADO */
+
+.resultado {
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    animation: aparecer 0.3s ease;
+}
+
+.resultado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resultado-label {
+    color: var(--cinza-500);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.resultado h2 {
+    color: var(--verde);
+
+    font-size: 25px;
+
+    margin-top: 4px;
+}
+
+.check {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--verde-claro);
+
+    color: var(--verde);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.linha {
+    height: 1px;
+
+    background: #e2e8f0;
+
+    margin: 20px 0;
+}
+
+.resultado h3 {
+    color: var(--cinza-700);
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+/* NOTAS */
+
+.notas {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.nota {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    padding: 13px;
+
+    border-radius: 12px;
+}
+
+.nota-valor {
+    color: var(--cinza-900);
+
+    font-weight: 700;
+}
+
+.nota-quantidade {
+    color: var(--azul);
+
+    background: var(--azul-claro);
+
+    padding: 5px 9px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* RODAPÉ */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 25px;
+
+    color: var(--cinza-500);
+
+    font-size: 11px;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 550px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .caixa {
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+    .cabecalho h1 {
+        font-size: 20px;
+    }
+
+    .cabecalho p {
+        font-size: 11px;
+    }
+
+    .saldo-card strong {
+        font-size: 24px;
+    }
+
+    .notas {
+        grid-template-columns: 1fr;
+    }
+}

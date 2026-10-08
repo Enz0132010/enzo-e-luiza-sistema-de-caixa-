@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Caixa Eletrônico</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="caixa">
+
+            <header class="cabecalho">
+                <div class="logo">
+                    <span>🏦</span>
+                </div>
+
+                <div>
+                    <h1>Caixa Eletrônico</h1>
+                    <p>Faça seu saque de forma rápida e segura</p>
+                </div>
+            </header>
+
+            <div class="saldo-card">
+                <div>
+                    <span class="saldo-label">Saldo disponível</span>
+                    <strong id="saldo">R$ 1.000,00</strong>
+                </div>
+
+                <span class="saldo-icon">💰</span>
+            </div>
+
+            <main>
+
+                <div class="formulario">
+
+                    <label for="valor">
+                        Quanto você deseja sacar?
+                    </label>
+
+                    <div class="input-container">
+                        <span>R$</span>
+
+                        <input
+                            type="number"
+                            id="valor"
+                            placeholder="0"
+                            min="1"
+                            step="1"
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <button id="sacar">
+                        <span>💸</span>
+                        Realizar saque
+                    </button>
+
+                </div>
+
+                <div id="mensagem" class="mensagem"></div>
+
+                <section id="resultado" class="resultado">
+
+                    <div class="resultado-header">
+                        <div>
+                            <span class="resultado-label">
+                                Saque realizado
+                            </span>
+
+                            <h2 id="valorSacado">
+                                R$ 0,00
+                            </h2>
+                        </div>
+
+                        <div class="check">
+                            ✓
+                        </div>
+                    </div>
+
+                    <div class="linha"></div>
+
+                    <h3>Notas entregues</h3>
+
+                    <div id="notas" class="notas"></div>
+
+                </section>
+
+            </main>
+
+            <footer>
+                <span>💳</span>
+                Caixa Eletrônico Digital
+                <span>•</span>
+                Operação segura
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
